@@ -1,61 +1,56 @@
 import java.util.jar.Attributes;
 
 public class Human {
-    int yearOfBirth;
+    private int yearOfBirth;
     String name;
-    String town;
+    private String town;
     String job;
 
     public Human(String name, String town, int yearOfBirth, String job) {
-        if (yearOfBirth >= 0) {
             this.yearOfBirth = yearOfBirth;
             this.name = name;
             this.town = town;
             this.job = job;
-        } else {
-            this.yearOfBirth = 0;
-            this.name = name;
-            this.town = town;
-            this.job = job;
-        }
     }
     public Human(String town, int yearOfBirth, String job) {
-        if (yearOfBirth >= 0) {
             this.yearOfBirth = yearOfBirth;
             name = "Default";
             this.town = town;
             this.job = job;
-        } else {
-            this.yearOfBirth = 0;
-            name = "Default";
-            this.town = town;
-            this.job = job;
-        }
     }
     public Human(String name, String town, int yearOfBirth) {
-        if (yearOfBirth >= 0) {
             this.yearOfBirth = yearOfBirth;
             this.name = name;
             this.town = town;
             job = "Default";
-        } else {
-            this.yearOfBirth = 0;
-            this.name = name;
-            this.town = town;
-            job = "Default";
-        }
     }
     public Human(int yearOfBirth, String name, String job) {
-        if (yearOfBirth >= 0) {
             this.yearOfBirth = yearOfBirth;
             this.name = name;
             town = "Default";
             this.job = job;
+    }
+    public int getYearOfBirth() {
+        return yearOfBirth;
+    }
+
+    public void setYearOfBirth(int yearOfBirth) {
+        if (yearOfBirth >= 0) {
+            this.yearOfBirth = yearOfBirth;
         } else {
             this.yearOfBirth = 0;
-            this.name = name;
-            town = "Default";
-            this.job = job;
+        }
+    }
+
+    public String getTown() {
+        return town;
+    }
+
+    public void setTown(String town) {
+        if (town != null) {
+            this.town = town;
+        } else {
+            this.town = "Unknown";
         }
     }
 }
